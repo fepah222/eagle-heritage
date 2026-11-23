@@ -1,33 +1,45 @@
 # Eagle Heritage Website
 
-A responsive, bilingual (English/French) corporate website for Eagle Heritage, a Cameroon-based construction, building and civil engineering company.
+A responsive, bilingual (English/French) company website for Eagle Heritage, a Cameroon-based construction, building and civil engineering company founded by Beltrand Ndingwa.
 
-## Design direction
+## Project structure
 
-Classic and realistic corporate presentation: forest green, warm white and restrained gold; architectural photography; clean typography; no cinematic effects. The stylesheet is kept in `styles.css` and includes desktop, tablet and mobile layouts.
+- `index.html` — semantic page structure, content, metadata and navigation
+- `refresh.css` — responsive visual system and page styling
+- `site.js` — mobile navigation, language switching, header behaviour and WhatsApp enquiry form
+- `README.md` — project and deployment notes
 
-## Run locally in VS Code
+The original `styles.css` and `script.js` are retained in the repository history; the live page loads `refresh.css` and `site.js`.
 
-1. Extract this project folder.
-2. Open the extracted `eagle-heritage` folder in Visual Studio Code.
-3. Open `index.html` in a browser, or use the VS Code Live Server extension.
-4. Keep `index.html`, `styles.css` and `script.js` in the same folder.
+## Run locally
 
-No build command or package installation is required.
+Open the `eagle-heritage` folder in Visual Studio Code. Open `index.html` in a browser or use the Live Server extension. No build command or package installation is required.
 
-## Deploy to Netlify
+## Netlify deployment
 
-1. Push the project to a GitHub repository.
-2. In Netlify, choose **Add new site → Import an existing project**.
-3. Select the GitHub repository.
-4. Leave the build command blank and set the publish directory to `.`.
-5. Deploy. Later pushes to the connected production branch can deploy automatically.
+This repository currently keeps the website in the `eagle-heritage` subfolder.
 
-## Content notes
+- Build command: leave blank
+- Publish directory: `eagle-heritage`
+- Base directory: leave blank
 
-- Company details are based on information supplied for the initial website draft.
-- Project cards currently describe reported project categories, not named case studies.
-- Replace illustrative stock photography with approved Eagle Heritage project photographs before public launch.
-- Confirm registration documents, team credentials, insurance, safety procedures, client testimonials and publication permissions before making stronger public claims.
-- Office address and official email have not yet been provided and are intentionally omitted.
-- WhatsApp contacts: +237 681 486 499 and +237 691 507 676.
+Connect the GitHub repository to Netlify and select the production branch after the website changes have been reviewed and merged.
+
+## Content and verification notes
+
+- Company founder/director: Beltrand Ndingwa.
+- Public contact numbers supplied for the website: +237 681 486 499 and +237 691 507 676.
+- Services described include general construction, residential and commercial building, renovation, site works, drainage, excavation, retaining walls and related civil engineering.
+- Project categories reported by the company include residential houses, luxury homes, apartments and retaining walls in Douala. Individual case-study details should be confirmed by the director before publication.
+- Portfolio images currently serve as illustrative design placeholders. They are not represented as Eagle Heritage project photographs. Replace them with company photographs only after publication permission is confirmed.
+- Client names, testimonials, team credentials, company registration details, insurance, certifications, NIU/BTP classification, office address and email must be confirmed before they are published as factual claims.
+- The enquiry form does not store submissions. It prepares a WhatsApp message on the visitor's device.
+
+## Before public launch
+
+1. Replace all illustrative stock images with approved project photographs.
+2. Confirm the project descriptions, locations, completion dates and client permissions.
+3. Confirm the director's biography and approved team profiles.
+4. Verify company registration and any professional qualifications or certifications to be displayed.
+5. Confirm the official office address and email, if they should be published.
+6. Test the website on common mobile screen sizes and verify both WhatsApp numbers.
