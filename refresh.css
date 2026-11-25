@@ -613,3 +613,54 @@ img{max-width:100%}
  .home-quicklinks a{flex:1 1 50%!important;border-bottom:1px solid rgba(255,255,255,.12)!important}
  .home-quicklinks a:last-child{flex-basis:100%!important}
 }
+
+/* === FINAL HEADER / COLOR CONTRAST CORRECTION === */
+:root{--forest:#35483e;--deep:#27382f;--gold:#b8a17a;--paper:#f3f1eb;--ink:#272d29;--muted:#747a74;--line:#d8d8d0}
+.site-header{background:#35483e!important;color:#f2f0e9!important;border-bottom:1px solid #59685e!important}
+.brand{color:#f2f0e9!important}
+.brand-copy strong{color:#f2f0e9!important}
+.brand-copy small{color:#c0c8c0!important}
+.brand-symbol{background:#b8a17a!important}
+.brand-symbol svg{fill:#35483e!important;stroke:#35483e!important}
+.header-tools{display:flex!important;align-items:center!important;gap:9px!important}
+.header-tools button{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-width:62px!important;height:36px!important;padding:0 9px!important;background:#d8d3c7!important;color:#26372e!important;border:1px solid #b8a17a!important;border-radius:0!important;font:800 9px var(--display)!important;letter-spacing:.7px!important;white-space:nowrap!important}
+.theme-toggle span{font-size:8px!important}
+.menu-toggle{display:none!important;align-items:center!important;justify-content:center!important;width:auto!important;min-width:70px!important;height:36px!important;padding:0 12px!important;background:#d8d3c7!important;color:#26372e!important;border:1px solid #b8a17a!important;border-radius:0!important;box-shadow:none!important;font:800 10px var(--display)!important;letter-spacing:1.2px!important}
+.menu-button-label{display:block!important;color:#26372e!important}
+.menu-toggle span{display:none!important}
+.nav>a{color:#f2f0e9!important}
+.nav>a:hover{color:#d5c19a!important}
+.nav .language-toggle{display:none!important}
+.page-back{display:flex;align-items:center;gap:12px;min-height:46px;padding-block:8px;color:#70776f;font:600 10px var(--display);letter-spacing:.3px}
+.page-back a{color:#46584c;text-decoration:underline;text-underline-offset:3px}
+.back-button{border:0;background:transparent;color:#46584c;font:700 10px var(--display);padding:6px 0;cursor:pointer}
+.current-page{color:#9a8b6d}
+:root[data-theme="dark"] .site-header{background:#26382f!important}
+:root[data-theme="dark"] .brand,:root[data-theme="dark"] .brand-copy strong{color:#f2f0e9!important}
+:root[data-theme="dark"] .brand-copy small{color:#c0c8c0!important}
+:root[data-theme="dark"] .nav>a{color:#f2f0e9!important}
+:root[data-theme="dark"] .header-tools button,:root[data-theme="dark"] .menu-toggle{background:#d8d3c7!important;color:#26372e!important}
+:root[data-theme="dark"] .page-back{color:#b8c0b9}
+:root[data-theme="dark"] .page-back a,:root[data-theme="dark"] .back-button{color:#d8d3c7}
+@media(max-width:900px){
+ .menu-toggle{display:inline-flex!important;order:3!important}
+ .header-tools{order:2!important;gap:5px!important}
+ .header-tools button{min-width:48px!important;height:34px!important;padding:0 7px!important;font-size:8px!important}
+ .menu-toggle{min-width:60px!important;height:34px!important;font-size:9px!important}
+ .nav{background:#35483e!important;border-top:1px solid #59685e!important;border-bottom:1px solid #59685e!important;border-radius:0!important}
+ .nav>a{color:#f2f0e9!important;border-color:#59685e!important}
+ .nav.is-open{display:flex!important}
+ .header-inner{gap:10px!important}
+ .brand{min-width:0!important}
+ .brand-copy strong{font-size:12px!important}
+ .brand-copy small{letter-spacing:1px!important}
+}
+@media(max-width:390px){.header-tools button{min-width:43px!important;font-size:7px!important;padding-inline:5px!important}.menu-toggle{min-width:53px!important;padding-inline:8px!important}}
+/* Muted, architectural palette; avoid bright saturated accents. */
+.button-gold{background:#b8a17a!important;color:#26372e!important}
+.button-gold:hover{background:#c6b18c!important}
+.section-label,.eyebrow-dark{color:#8d8066!important}
+.hero h1 em,.hero .eyebrow{color:#c8b58e!important}
+.hero-overlay{background:linear-gradient(90deg,rgba(28,43,35,.90),rgba(28,43,35,.72) 50%,rgba(28,43,35,.28))!important}
+.services,.contact{background:#27382f!important}
+.projects{background:#e8e6df!important}
