@@ -1,112 +1,13 @@
 (() => {
   "use strict";
-
-  const menuButton = document.querySelector(".menu-toggle");
-  const navigation = document.querySelector(".nav");
-  const header = document.getElementById("siteHeader");
-  const languageButton = document.getElementById("languageToggle");
-  const enquiryForm = document.getElementById("enquiryForm");
-  let language = "en";
-
-  const closeMenu = () => {
-    if (!menuButton || !navigation) return;
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Open navigation");
-    navigation.classList.remove("is-open");
-    navigation.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("menu-open");
-  };
-
-  if (menuButton && navigation) {
-    navigation.setAttribute("aria-hidden", "true");
-    menuButton.addEventListener("click", () => {
-      const open = menuButton.getAttribute("aria-expanded") !== "true";
-      menuButton.setAttribute("aria-expanded", String(open));
-      menuButton.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-      navigation.classList.toggle("is-open", open);
-      navigation.setAttribute("aria-hidden", String(!open));
-      document.body.classList.toggle("menu-open", open);
-    });
-
-    navigation.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
-    document.addEventListener("click", (event) => {
-      if (menuButton.getAttribute("aria-expanded") === "true" &&
-          !menuButton.contains(event.target) && !navigation.contains(event.target)) {
-        closeMenu();
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeMenu();
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 900) closeMenu();
-    });
-  }
-
-  const setLanguage = (nextLanguage) => {
-    language = nextLanguage;
-    document.documentElement.lang = language;
-
-    document.querySelectorAll("[data-en][data-fr]").forEach((element) => {
-      element.innerHTML = element.dataset[language];
-    });
-
-    if (languageButton) {
-      languageButton.textContent = language === "en" ? "FR" : "EN";
-      languageButton.setAttribute(
-        "aria-label",
-        language === "en" ? "Switch language to French" : "Passer en anglais"
-      );
-    }
-  };
-
-  if (languageButton) {
-    languageButton.addEventListener("click", () => {
-      setLanguage(language === "en" ? "fr" : "en");
-    });
-  }
-
-  if (header) {
-    const updateHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 12);
-    updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
-  }
-
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
-
-  if (enquiryForm) {
-    enquiryForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      if (!enquiryForm.reportValidity()) return;
-
-      const data = new FormData(enquiryForm);
-      const name = String(data.get("name") || "").trim();
-      const phone = String(data.get("phone") || "").trim();
-      const service = String(data.get("service") || "").trim();
-      const location = String(data.get("location") || "").trim();
-      const details = String(data.get("details") || "").trim();
-
-      const labels = language === "fr"
-        ? { heading: "Bonjour Eagle Heritage, je souhaite me renseigner sur un projet.", name: "Nom", phone: "Téléphone", service: "Type de projet", location: "Lieu du projet", details: "Description" }
-        : { heading: "Hello Eagle Heritage, I would like to enquire about a project.", name: "Name", phone: "Phone", service: "Project type", location: "Project location", details: "Description" };
-
-      const lines = [
-        labels.heading,
-        "",
-        labels.name + ": " + name,
-        labels.phone + ": " + phone,
-        labels.service + ": " + service
-      ];
-      if (location) lines.push(labels.location + ": " + location);
-      if (details) lines.push(labels.details + ": " + details);
-
-      const whatsappUrl = "https://wa.me/237681486499?text=" + encodeURIComponent(lines.join("\n"));
-      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-    });
-  }
+  const menuButton=document.querySelector(".menu-toggle"),navigation=document.querySelector(".nav"),header=document.getElementById("siteHeader"),languageButton=document.getElementById("languageToggle"),enquiryForm=document.getElementById("enquiryForm");
+  let language="en";
+  const closeMenu=()=>{if(!menuButton||!navigation)return;menuButton.setAttribute("aria-expanded","false");menuButton.setAttribute("aria-label","Open menu");navigation.classList.remove("is-open");navigation.setAttribute("aria-hidden","true");document.body.classList.remove("menu-open");};
+  if(menuButton&&navigation){navigation.setAttribute("aria-hidden","true");menuButton.addEventListener("click",()=>{const open=menuButton.getAttribute("aria-expanded")!=="true";menuButton.setAttribute("aria-expanded",String(open));menuButton.setAttribute("aria-label",open?"Close menu":"Open menu");navigation.classList.toggle("is-open",open);navigation.setAttribute("aria-hidden",String(!open));document.body.classList.toggle("menu-open",open);});navigation.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeMenu));document.addEventListener("click",event=>{if(menuButton.getAttribute("aria-expanded")==="true"&&!menuButton.contains(event.target)&&!navigation.contains(event.target))closeMenu();});document.addEventListener("keydown",event=>{if(event.key==="Escape")closeMenu();});window.addEventListener("resize",()=>{if(window.innerWidth>900)closeMenu();});}
+  const setLanguage=next=>{language=next;document.documentElement.lang=language;document.querySelectorAll("[data-en][data-fr]").forEach(el=>el.innerHTML=el.dataset[language]);if(languageButton){languageButton.textContent=language==="en"?"FR":"EN";languageButton.setAttribute("aria-label",language==="en"?"Switch language to French":"Passer en anglais");}};
+  if(languageButton)languageButton.addEventListener("click",()=>setLanguage(language==="en"?"fr":"en"));
+  if(header){const update=()=>header.classList.toggle("is-scrolled",window.scrollY>12);update();window.addEventListener("scroll",update,{passive:true});}
+  const year=document.getElementById("year");if(year)year.textContent=new Date().getFullYear();
+  if(enquiryForm)enquiryForm.addEventListener("submit",event=>{event.preventDefault();if(!enquiryForm.reportValidity())return;const data=new FormData(enquiryForm),name=String(data.get("name")||"").trim(),phone=String(data.get("phone")||"").trim(),service=String(data.get("service")||"").trim(),location=String(data.get("location")||"").trim(),details=String(data.get("details")||"").trim();const labels=language==="fr"?{heading:"Bonjour Eagle Heritage, je souhaite me renseigner sur un projet.",name:"Nom",phone:"Téléphone",service:"Type de projet",location:"Lieu du projet",details:"Description"}:{heading:"Hello Eagle Heritage, I would like to enquire about a project.",name:"Name",phone:"Phone",service:"Project type",location:"Project location",details:"Description"};const lines=[labels.heading,"",labels.name+": "+name,labels.phone+": "+phone,labels.service+": "+service];if(location)lines.push(labels.location+": "+location);if(details)lines.push(labels.details+": "+details);window.open("https://wa.me/237681486499?text="+encodeURIComponent(lines.join("\n")),"_blank","noopener,noreferrer");});
+  const consentKey="eagleHeritageCookieConsent";const banner=document.getElementById("cookieBanner");if(banner&&!localStorage.getItem(consentKey)){banner.hidden=false;}const saveConsent=value=>{localStorage.setItem(consentKey,value);if(banner)banner.hidden=true;};document.querySelectorAll("[data-cookie-choice]").forEach(btn=>btn.addEventListener("click",()=>saveConsent(btn.dataset.cookieChoice)));
 })();
