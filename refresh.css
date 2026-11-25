@@ -387,3 +387,39 @@ section,header,footer,main{min-width:0}
 .leadership-visual:has(.founder-photo:not([style*="display: none"])){background:#f0eee8}
 @media(max-width:900px){.leadership-visual{aspect-ratio:3/4;max-width:540px}}
 @media(max-width:600px){.leadership-visual{aspect-ratio:3/4;max-width:100%}}
+
+/* === UX accessibility, contrast, spacing, motion, menu and consent refinement === */
+:root{--contrast-ink:#14251d;--contrast-paper:#f8f7f2;--button-ink:#14251d;--button-gold:#c7a66a;--focus:#a17c38}
+.button,.button-gold,.button-dark,.button-ghost,.language-toggle,.menu-toggle,.footer-link{color:var(--button-ink)!important}
+.button-gold{background:var(--button-gold)!important;border-color:var(--button-gold)!important;color:#17261d!important}
+.button-dark{background:#f4f1e8!important;border-color:#f4f1e8!important;color:#17261d!important}
+.button-ghost{background:rgba(16,35,27,.5)!important;border-color:#f8f7f2!important;color:#fff!important}
+.button-ghost:hover{background:#f8f7f2!important;color:#17261d!important}
+.language-toggle{background:#f7f5ee!important;color:#17261d!important;border-color:#b99a5b!important}
+.menu-toggle{background:#fff!important;border-color:#c9cfc7!important}
+.menu-toggle span{background:#17261d!important;width:21px;height:2px;border-radius:2px}
+.nav>a{padding:8px 3px;color:#203128!important}
+.nav>a:hover,.nav>a:focus-visible{color:#876a34!important}
+.form-grid input,.form-grid select,.form-grid textarea{color:#fff!important;background:#263d32!important;border-color:#a5b4a8!important}
+.form-grid select option{background:#fff;color:#17261d}
+.form-grid label{line-height:1.6;gap:9px}
+.enquiry-form,.contact-panel,.contact-method{overflow:visible}
+.page-title{padding-block:clamp(45px,7vw,85px)!important}
+.page-title h1{margin:10px 0 15px!important;line-height:1.12!important}
+.page-title>p:last-child{max-width:62ch;margin:0!important;line-height:1.85!important}
+.section-pad{padding-block:clamp(64px,8vw,104px)}
+.intro-grid,.section-heading,.service-item,.portfolio-card,.capabilities-copy,.leadership-copy,.contact-grid,.enquiry-form{animation:ehFadeUp .65s both}
+@keyframes ehFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.intro-grid,.section-heading,.service-item,.portfolio-card,.capabilities-copy,.leadership-copy,.contact-grid,.enquiry-form{animation:none!important}}
+.site-footer{padding-top:8px}
+.footer-main{padding-block:25px;min-height:unset;flex-wrap:wrap;row-gap:20px}
+.footer-links{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center}
+.footer-links a{color:#e4d3a9!important;text-decoration:underline;text-underline-offset:4px;font-size:11px;padding:5px 2px}
+.footer-links a:hover{color:#fff!important}
+.footer-bottom{padding-block:16px;min-height:unset;flex-wrap:wrap;line-height:1.6}
+.cookie-banner{position:fixed;z-index:1000;left:clamp(12px,3vw,30px);right:clamp(12px,3vw,30px);bottom:clamp(12px,3vw,30px);max-width:760px;margin:auto;padding:22px 24px;background:#fff;color:#17261d;border:1px solid #d6d9d1;box-shadow:0 18px 55px rgba(0,0,0,.22);border-radius:8px;display:flex;gap:22px;align-items:center;justify-content:space-between;animation:ehFadeUp .35s ease-out}
+.cookie-banner[hidden]{display:none!important}
+.cookie-copy{min-width:0}.cookie-copy strong{display:block;color:#17261d;font:700 15px var(--display);margin-bottom:5px}.cookie-copy p{margin:0;color:#46534a;font-size:12px;line-height:1.7}.cookie-actions{display:flex;flex-wrap:wrap;gap:9px;flex-shrink:0}.cookie-actions button{border:1px solid #17261d;padding:10px 14px;min-height:42px;border-radius:4px;font-size:11px;font-weight:800;cursor:pointer}.cookie-accept{background:#17261d;color:#fff!important}.cookie-reject{background:#fff;color:#17261d!important}
+@media(max-width:620px){.cookie-banner{display:block;padding:18px}.cookie-actions{margin-top:14px}.cookie-actions button{flex:1}.footer-links{gap:9px 14px}.footer-links a{font-size:10px}}
+
+.policy-content{max-width:760px;margin:0 auto;color:#4b574e}.policy-content h2{margin:32px 0 10px;color:var(--forest);font:600 25px var(--serif)}.policy-content p{font-size:14px;line-height:1.9}.policy-content .inline-link{margin-top:20px}
