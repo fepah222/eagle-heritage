@@ -153,3 +153,9 @@ img,svg,video{max-width:100%}
   .site-footer .footer-bottom{padding-bottom:max(13px,env(safe-area-inset-bottom))}
   .hero-inner{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
 }
+
+/* User-uploaded assets: upload files to the exact paths below and they appear automatically. */
+.brand-logo{display:block;width:48px;height:48px;object-fit:contain;flex-shrink:0}.brand:has(.brand-logo[style*="display: none"]) .brand-symbol{display:flex}
+.brand-logo:not([style*="display: none"])+.brand-symbol{display:none}
+.portfolio-photo{position:relative;overflow:hidden}.portfolio-photo img{display:block;width:100%;height:100%;min-height:inherit;object-fit:cover;position:absolute;inset:0}.portfolio-photo:has(img[style*="display: none"]){background-position:center;background-size:cover}
+.leadership-visual{position:relative}.founder-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0}.leadership-visual:has(.founder-photo:not([style*="display: none"])){background:#eee}.leadership-visual:has(.founder-photo:not([style*="display: none"]))::before,.leadership-visual:has(.founder-photo:not([style*="display: none"]))::after,.leadership-visual:has(.founder-photo:not([style*="display: none"])) .leadership-monogram{display:none}.leadership-visual>span{z-index:2;background:rgba(23,45,35,.7);padding:8px 10px;align-self:flex-start}
