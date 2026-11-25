@@ -1,5 +1,11 @@
-# Images
+# Image Upload Guide
 
-Upload the founder portrait here as `founder.png` (or preserve its actual extension). Recommended: use a clear, high-quality original image. The website will reference `/assets/images/founder.png` once uploaded.
+Upload files with these exact names so the website displays them automatically:
 
-Other general company photos can go here. Project photos should be organized under `projects/`, team portraits under `team/`, and logo files under `branding/`.
+- Founder portrait: `assets/images/founder.jpg`
+- Company logo: `assets/images/branding/logo.png`
+- Project 1: `assets/images/projects/project-01.jpg`
+- Project 2: `assets/images/projects/project-02.jpg`
+- Project 3: `assets/images/projects/project-03.jpg`
+
+Keep the filename and extension exact. If you have PNG photos instead of JPG, tell me and I can adjust the website paths. Upload additional project images later using more project folders/files; the initial homepage is currently wired to the first three image slots.
