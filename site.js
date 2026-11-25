@@ -13,20 +13,29 @@
     menuButton.setAttribute("aria-expanded", "false");
     menuButton.setAttribute("aria-label", "Open navigation");
     navigation.classList.remove("is-open");
+    navigation.setAttribute("aria-hidden", "true");
     document.body.classList.remove("menu-open");
   };
 
   if (menuButton && navigation) {
+    navigation.setAttribute("aria-hidden", "true");
     menuButton.addEventListener("click", () => {
       const open = menuButton.getAttribute("aria-expanded") !== "true";
       menuButton.setAttribute("aria-expanded", String(open));
       menuButton.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
       navigation.classList.toggle("is-open", open);
+      navigation.setAttribute("aria-hidden", String(!open));
       document.body.classList.toggle("menu-open", open);
     });
 
     navigation.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", closeMenu);
+    });
+    document.addEventListener("click", (event) => {
+      if (menuButton.getAttribute("aria-expanded") === "true" &&
+          !menuButton.contains(event.target) && !navigation.contains(event.target)) {
+        closeMenu();
+      }
     });
 
     document.addEventListener("keydown", (event) => {
