@@ -574,15 +574,15 @@ img{max-width:100%}
 :root[data-theme="dark"]{--paper:#141a16;--ink:#e7ebe6;--muted:#aeb8b0;--line:#35433a;--forest:#20372b;--deep:#101e17}
 :root[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
 :root[data-theme="dark"] .site-header{background:#17241c;border-color:#344238}
-:root[data-theme="dark"] .brand,. :root[data-theme="dark"] .nav>a{color:#e6ebe6}
+:root[data-theme="dark"] .brand,:root[data-theme="dark"] .nav>a{color:#e6ebe6}
 :root[data-theme="dark"] .brand-copy small{color:#a9b5ac}
 :root[data-theme="dark"] .header-tools button{color:#e8dfc6}
 :root[data-theme="dark"] .menu-toggle span{background:#e8e8df!important}
 :root[data-theme="dark"] .nav{background:#17241c;border-color:#35443a}
 :root[data-theme="dark"] .nav>a{border-color:#344238}
-:root[data-theme="dark"] .intro-body,. :root[data-theme="dark"] .leadership-copy>p:not(.eyebrow):not(.lead):not(.leadership-note){color:#c2cbc4}
-:root[data-theme="dark"] .intro-body .lead,. :root[data-theme="dark"] .leadership-copy .lead{color:#e2e8e2}
-:root[data-theme="dark"] .intro-heading h2,. :root[data-theme="dark"] .capabilities h2,. :root[data-theme="dark"] .leadership h2,. :root[data-theme="dark"] .principles h3{color:#e6ebe5}
+:root[data-theme="dark"] .intro-body,:root[data-theme="dark"] .leadership-copy>p:not(.eyebrow):not(.lead):not(.leadership-note){color:#c2cbc4}
+:root[data-theme="dark"] .intro-body .lead,:root[data-theme="dark"] .leadership-copy .lead{color:#e2e8e2}
+:root[data-theme="dark"] .intro-heading h2,:root[data-theme="dark"] .capabilities h2,:root[data-theme="dark"] .leadership h2,:root[data-theme="dark"] .principles h3{color:#e6ebe5}
 :root[data-theme="dark"] .projects{background:#202922}
 :root[data-theme="dark"] .portfolio-card{background:#18241c}
 :root[data-theme="dark"] .portfolio-meta h3{color:#e6ebe5}
@@ -591,7 +591,7 @@ img{max-width:100%}
 :root[data-theme="dark"] .capability-points div{color:#d5ddd6}
 :root[data-theme="dark"] .page-title h1{color:#e7ebe6}
 :root[data-theme="dark"] .page-title p{color:#b9c4bb}
-:root[data-theme="dark"] .content-block,. :root[data-theme="dark"] .policy-content{color:#c5cec7}
+:root[data-theme="dark"] .content-block,:root[data-theme="dark"] .policy-content{color:#c5cec7}
 :root[data-theme="dark"] .cookie-banner{background:#18251d;color:#e5ebe6;border-color:#3a473e}
 :root[data-theme="dark"] .site-footer{background:#101e17}
 @media(max-width:900px){
