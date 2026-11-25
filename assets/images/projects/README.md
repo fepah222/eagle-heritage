@@ -1,3 +1,9 @@
-# Project Photos
+# Project photos
 
-Create one folder per project, for example `project-01/`, and upload photos with descriptive filenames such as `foundation.jpg`, `construction-progress.jpg`, `exterior-completed.jpg`, and `interior.jpg`. Include only images Eagle Heritage has permission to publish.
+The homepage image slots are configured for:
+
+- `project-01.jpg`
+- `project-02.jpg`
+- `project-03.jpg`
+
+Upload these images directly into this folder. Use genuine Eagle Heritage project photos only, and ensure the company has permission to publish them.
