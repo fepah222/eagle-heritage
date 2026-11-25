@@ -313,3 +313,42 @@ section,header,footer,main{min-width:0}
  .intro-grid{padding:30px 0;gap:16px}
  .hero-caption{max-width:calc(100% - 36px)}
 }
+
+/* ===== Option 1: immersive, image-led landing screen ===== */
+.option-one-home .topbar{display:none}
+.option-one-home .site-header{position:absolute;top:0;left:0;right:0;background:transparent;border:0;box-shadow:none;color:#fff}
+.option-one-home .header-inner{min-height:82px}
+.option-one-home .brand{color:#fff}
+.option-one-home .brand-copy small{color:rgba(255,255,255,.72)}
+.option-one-home .brand-symbol{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2)}
+.option-one-home .menu-toggle{display:flex;border:1px solid rgba(255,255,255,.5);background:rgba(17,35,27,.25)}
+.option-one-home .menu-toggle span{background:#fff}
+.option-one-home .nav{position:absolute;top:100%;right:0;left:auto;display:none;flex-direction:column;gap:0;width:min(340px,calc(100vw - 32px));max-height:calc(100svh - 100px);overflow:auto;padding:14px 20px 20px;background:#172c23;border:1px solid rgba(255,255,255,.15);box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.option-one-home .nav.is-open{display:flex}
+.option-one-home .nav>a{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);color:#fff;font-size:12px}
+.option-one-home .language-toggle{align-self:flex-start;margin-top:12px;background:transparent;color:#dfc994;border-color:#dfc994}
+.option-one-home main{padding-top:82px}
+.option-one-home .hero-image{background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=88');background-position:center 55%}
+.option-one-home .hero-overlay{background:linear-gradient(180deg,rgba(12,25,19,.5) 0%,rgba(12,25,19,.25) 35%,rgba(12,25,19,.76) 100%)}
+.option-one-home .hero-inner{padding-top:clamp(45px,8vh,90px);padding-bottom:clamp(140px,20vh,190px)}
+.option-one-home .hero h1{font-size:clamp(48px,7vw,88px);max-width:13ch}
+.option-one-home .hero-description{max-width:42ch}
+.option-one-home .hero-actions{gap:12px}
+.option-one-home .home-quicklinks{bottom:25px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.option-one-home .home-quicklinks a{min-height:54px;padding:10px 8px;border:1px solid rgba(255,255,255,.28);background:rgba(15,30,23,.72);backdrop-filter:blur(9px);text-align:center;font-size:10px}
+.option-one-home .home-quicklinks a span{display:none}
+@media(max-width:900px){.option-one-home .header-inner{min-height:70px}.option-one-home main{padding-top:70px}.option-one-home .hero-inner{padding-bottom:160px}.option-one-home .home-quicklinks{bottom:15px}}
+@media(max-width:600px){
+ .option-one-home.home-screen{min-height:100svh;height:100svh}
+ .option-one-home main{padding-top:70px}
+ .option-one-home .hero{min-height:0;height:100%}
+ .option-one-home .hero-inner{padding:28px 0 170px}
+ .option-one-home .hero h1{font-size:clamp(39px,10.5vw,58px);max-width:11ch}
+ .option-one-home .hero-description{max-width:36ch;font-size:12px}
+ .option-one-home .hero-actions{max-width:290px;width:100%;margin-inline:auto;display:grid;grid-template-columns:1fr;gap:9px}
+ .option-one-home .hero-actions .button{min-height:44px;width:100%}
+ .option-one-home .hero-caption{bottom:145px;left:50%;transform:translateX(-50%);font-size:7px;white-space:nowrap}
+ .option-one-home .home-quicklinks{bottom:10px;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .option-one-home .home-quicklinks a{min-height:40px;padding:9px 6px;font-size:9px}
+ .option-one-home .home-quicklinks a:last-child{grid-column:1/-1}
+}
