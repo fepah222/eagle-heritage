@@ -14,5 +14,28 @@
   if(header){const update=()=>header.classList.toggle("is-scrolled",window.scrollY>12);update();window.addEventListener("scroll",update,{passive:true});}
   const backButton=document.getElementById("backButton");if(backButton)backButton.addEventListener("click",()=>{if(window.history.length>1)window.history.back();else window.location.href="index.html";});\n  const year=document.getElementById("year");if(year)year.textContent=new Date().getFullYear();
   if(enquiryForm)enquiryForm.addEventListener("submit",event=>{event.preventDefault();if(!enquiryForm.reportValidity())return;const data=new FormData(enquiryForm),name=String(data.get("name")||"").trim(),phone=String(data.get("phone")||"").trim(),service=String(data.get("service")||"").trim(),location=String(data.get("location")||"").trim(),details=String(data.get("details")||"").trim();const labels=language==="fr"?{heading:"Bonjour Eagle Heritage, je souhaite me renseigner sur un projet.",name:"Nom",phone:"Téléphone",service:"Type de projet",location:"Lieu du projet",details:"Description"}:{heading:"Hello Eagle Heritage, I would like to enquire about a project.",name:"Name",phone:"Phone",service:"Project type",location:"Project location",details:"Description"};const lines=[labels.heading,"",labels.name+": "+name,labels.phone+": "+phone,labels.service+": "+service];if(location)lines.push(labels.location+": "+location);if(details)lines.push(labels.details+": "+details);window.open("https://wa.me/237681486499?text="+encodeURIComponent(lines.join("\n")),"_blank","noopener,noreferrer");});
+
+  // Progressive reveal animations: content remains visible if JS or motion support is unavailable.
+  const revealTargets=document.querySelectorAll("main section, .page-title, .portfolio-card, .principles article, .service-item, .capabilities-grid, .leadership-grid, .contact-grid");
+  if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    document.body.classList.add("reveal-ready");
+    revealTargets.forEach((el,index)=>{el.classList.add("reveal");el.dataset.revealDelay=String(index%4);});
+    const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");revealObserver.unobserve(entry.target);}}),{threshold:.12,rootMargin:"0px 0px -35px 0px"});
+    revealTargets.forEach(el=>revealObserver.observe(el));
+  }
+  // Portfolio filters are data-driven; no project facts are invented.
+  const projectFilters=document.querySelectorAll("[data-project-filter]");
+  const projectCards=document.querySelectorAll("[data-project-category]");
+  projectFilters.forEach(button=>button.addEventListener("click",()=>{
+    const category=button.dataset.projectFilter;
+    projectFilters.forEach(filter=>{const active=filter===button;filter.classList.toggle("is-active",active);filter.setAttribute("aria-pressed",String(active));});
+    projectCards.forEach(card=>card.classList.toggle("is-filtered-out",category!=="all"&&card.dataset.projectCategory!==category));
+  }));
+  // Add a light parallax to the homepage hero only on capable desktop devices.
+  const heroImage=document.querySelector(".home-screen .hero-image");
+  if(heroImage&&window.matchMedia("(min-width: 851px) and (prefers-reduced-motion: no-preference)").matches){
+    let ticking=false;
+    window.addEventListener("scroll",()=>{if(!ticking){window.requestAnimationFrame(()=>{const y=Math.min(window.scrollY,500)*.12;heroImage.style.backgroundPosition="center calc(54% + "+y+"px)";ticking=false;});ticking=true;}},{passive:true});
+  }
   const consentKey="eagleHeritageCookieConsent",banner=document.getElementById("cookieBanner");if(banner&&!localStorage.getItem(consentKey))banner.hidden=false;const saveConsent=value=>{localStorage.setItem(consentKey,value);if(banner)banner.hidden=true;};document.querySelectorAll("[data-cookie-choice]").forEach(btn=>btn.addEventListener("click",()=>saveConsent(btn.dataset.cookieChoice)));
 })();
