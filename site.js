@@ -41,7 +41,7 @@
       menuButton.setAttribute("aria-expanded",String(isOpen));
       menuButton.setAttribute("aria-label",isOpen?(language==="en"?"Close navigation menu":"Fermer le menu"):(language==="en"?"Open navigation menu":"Ouvrir le menu"));
       navigation.classList.toggle("is-open",isOpen);
-      navigation.setAttribute("aria-hidden",String(!isOpen&&window.innerWidth<=850);
+      navigation.setAttribute("aria-hidden",String(!isOpen&&window.innerWidth<=850));
     });
     navigation.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeMenu));
     document.addEventListener("click",event=>{if(menuButton.getAttribute("aria-expanded")==="true"&&!menuButton.contains(event.target)&&!navigation.contains(event.target))closeMenu();});
