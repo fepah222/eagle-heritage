@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://eagle-heritage.netlify.app/sitemap.xml
+Sitemap: https://eagle-heritage.pages.dev/sitemap.xml
