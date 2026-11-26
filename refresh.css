@@ -266,3 +266,39 @@ body,.inner-page{background:#f0eee7!important;color:#333a34!important}
  .hamburger-icon{width:25px!important;height:18px!important}
  .hamburger-icon span{height:2px!important;border-radius:0!important}
 }
+
+/* Contrast and surface correction: avoid washed-out grey/white-on-white text */
+:root{--ivory:#e9e5dc;--stone:#ded8cc;--white:#e9e5dc;--ink:#27342d;--muted:#5e675f;--line:#c5bfb2}
+body,.inner-page{background:#e9e5dc!important;color:#27342d!important}
+.intro-body,.intro-body p,.page-title>p:last-child,.capabilities-intro,.leadership-copy p,.portfolio-meta p,.portfolio-disclaimer,.form-heading p,.form-privacy,.page-back{color:#505b53!important}
+.intro-body .lead,.lead{color:#35463a!important}
+.page-title,.projects,.capabilities,.portfolio-card,.contact-panel,.cookie-banner{background:#ded8cc!important}
+.portfolio-disclaimer{background:#d5d0c5!important;border-color:#bdb6a8!important}
+.portfolio-meta h3,.page-title h1,.intro-heading h2,.section-heading h2,.capabilities h2,.leadership h2,.contact h2,.principles h3,.form-heading h3{color:#2d4436!important}
+.section-label{border-bottom:0!important;padding-bottom:8px!important;color:#5d634f!important}
+.section-label>span:first-child{color:#967d58!important}
+.principles{border-block-color:#c5bfb2!important}
+.principles article+article{border-left-color:#c5bfb2!important}
+.principles p{color:#535e55!important}
+.page-back{color:#4e5a51!important}
+.contact-method{border-bottom:1px solid rgba(235,231,221,.24)!important}
+.contact-intro>p:not(.eyebrow){color:#e1e6df!important}
+.contact-method a{color:#f1eee5!important}
+.contact-panel{background:#e4ded2!important;border:1px solid #c5bba9!important}
+.enquiry-form label{color:#34483b!important}
+.enquiry-form input,.enquiry-form select,.enquiry-form textarea{background:#d9d3c7!important;color:#26342d!important;border:1px solid #b9b1a3!important}
+.enquiry-form input::placeholder,.enquiry-form textarea::placeholder{color:#687268!important;opacity:1}
+.form-privacy{color:#525d54!important}
+.service-list,.service-item{border-color:rgba(235,231,221,.22)!important}
+.service-content p,.service-content li{color:#e1e6df!important}
+.footer-main p{color:#d0d7d0!important}
+.footer-links a{color:#f0f0e9!important}
+.footer-bottom{color:#d0d7d0!important;border-top-color:rgba(235,231,221,.22)!important}
+.cookie-banner{background:#e4ded2!important;color:#27342d!important;border-color:#c5bba9!important}
+.cookie-copy,.cookie-banner p{color:#465249!important}
+.cookie-banner a{color:#273f32!important}
+@media(max-width:850px){
+ .home-quicklinks{background:transparent!important}
+ .home-quicklinks a{background:#d8d0c1!important;color:#263b2e!important;border:1px solid #b8aa91!important}
+ .home-quicklinks a span{color:#756044!important}
+}
