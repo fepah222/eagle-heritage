@@ -122,3 +122,52 @@ body{overflow-y:auto!important}
 @media(min-width:851px){
  .nav>a[href="privacy.html"],.nav>a[href="cookies.html"],.nav>a[href="terms.html"]{font-size:8px;opacity:.7}
 }
+
+/* Compact right-aligned mobile dropdown; squared, consistent link surfaces */
+@media(max-width:850px){
+  .header-inner{position:relative}
+  .nav{
+    left:auto!important;
+    right:8px!important;
+    width:min(310px,calc(100vw - 24px))!important;
+    max-width:310px!important;
+    top:calc(100% + 8px)!important;
+    max-height:min(70svh,520px)!important;
+    overflow-y:auto!important;
+    padding:10px!important;
+    border:1px solid #b9a681!important;
+    border-radius:4px!important;
+    box-shadow:0 12px 24px rgba(12,22,15,.22)!important;
+    gap:5px!important;
+    background:#f7f6f1!important;
+  }
+  .nav>a{
+    width:100%!important;
+    min-height:42px!important;
+    box-sizing:border-box!important;
+    justify-content:flex-start!important;
+    padding:10px 13px!important;
+    margin:0!important;
+    border:1px solid #d2c8b5!important;
+    border-radius:3px!important;
+    background:#e9e6de!important;
+    color:#243d32!important;
+    font-family:var(--ui,'DM Sans',sans-serif)!important;
+    font-size:12px!important;
+    font-weight:700!important;
+    letter-spacing:.2px!important;
+    line-height:1.3!important;
+    text-transform:none!important;
+  }
+  .nav>a:hover,.nav>a:focus-visible,.nav>a[aria-current=page]{
+    background:#c2b08e!important;
+    border-color:#a89372!important;
+    color:#203128!important;
+  }
+  .nav>a[href="privacy.html"],.nav>a[href="cookies.html"],.nav>a[href="terms.html"]{
+    margin-top:4px!important;
+    border-top:1px solid #d2c8b5!important;
+    padding-top:10px!important;
+  }
+  .menu-toggle{z-index:102!important}
+}
