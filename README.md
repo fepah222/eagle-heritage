@@ -1,56 +1,57 @@
 # Eagle Heritage Website
 
-Responsive, bilingual (English/French) static website for Eagle Heritage, a construction, building and civil engineering company based in Cameroon.
+Static, bilingual (English/French) website for Eagle Heritage, a construction, building and civil engineering company in Douala, Cameroon.
 
-## Repository structure
+## Deployment
 
-The website is stored at the repository root so Netlify can publish it directly without a subdirectory setting.
+The site is deployed as a static Cloudflare Pages project from the repository root. No build step or package installation is required. Keep the existing page filenames and internal links.
 
-```text
-/
-├── index.html       # Main website and SEO metadata
-├── refresh.css      # Responsive styles
-├── site.js          # Navigation, language toggle and WhatsApp enquiry form
-├── favicon.svg      # Browser icon
-├── robots.txt       # Search crawler rules
-├── 404.html         # Custom not-found page
-├── _headers         # Security and cache headers
-├── netlify.toml     # Netlify build and publish configuration
-└── README.md
-```
+Production URL: https://eagle-heritage.pages.dev/
 
-## Netlify configuration
+## Pages
 
-The root `netlify.toml` sets the publish directory to `.`. No build command or package installation is required.
+- `index.html` — homepage
+- `about.html` — company and leadership
+- `services.html` — services
+- `projects.html` — reported project categories (not a verified photo portfolio)
+- `approach.html` — project approach
+- `contact.html` — contact and WhatsApp enquiry preparation
+- `privacy.html`, `cookies.html`, `terms.html` — legal information
+- `404.html` — not-found page
 
-- Base directory: leave blank
-- Build command: leave blank
-- Publish directory: `.` (repository root)
-- Production branch: `main`
+## Shared files
 
-The configuration file is authoritative for the publish directory. If the Netlify dashboard has a conflicting value, align it with the root configuration.
+- `refresh.css` — design tokens and responsive layout
+- `site.js` — navigation, English/French switch, WhatsApp form flow, cookie choice, project filters
+- `favicon.svg` — site favicon
+- `_headers` — Cloudflare Pages response headers
+- `_redirects` — no catch-all rewrite; actual files and the 404 page should be served
+- `robots.txt` and `sitemap.xml` — crawler files for the Pages domain
+
+## Contact form
+
+The enquiry form is a client-side form that validates the required fields and prepares a WhatsApp message. It opens WhatsApp; the visitor must review and press **Send**. Eagle Heritage does not receive a message just because the form was submitted on the website.
+
+For direct website submission, add a backend endpoint or a Cloudflare Worker and connect it to a secure email/CRM provider. Configure server-side validation, rate limiting, spam protection, privacy handling and delivery/error feedback. Do not show a sent-success state until the server/provider confirms delivery.
+
+## Assets and factual content
+
+The repository currently has no verified project-image library and no confirmed logo image file at `assets/images/branding/logo.png`. The website uses a built-in SVG emblem as a temporary visual fallback. Some external Unsplash photos are illustrative and are explicitly not Eagle Heritage project photographs.
+
+Reported project categories in the existing content include residential houses, apartments/luxury homes and retaining walls. Individual project records and approved photographs should be added only after company confirmation and permission.
+
+The founder name and contact numbers are retained from the existing site content and should be confirmed by the company before final publication.
 
 ## Local preview
 
-Open this repository folder in Visual Studio Code and open `index.html` in a browser, or use the Live Server extension. No framework or build process is required.
+Open the project folder in VS Code and run a local static server (for example, Live Server), or serve the folder with Python:
 
-## SEO included
+```bash
+python -m http.server 8000
+```
 
-- Search-friendly page title and meta description focused on construction services in Douala, Cameroon
-- Index/follow robots directive
-- Open Graph and Twitter summary metadata
-- JSON-LD `GeneralContractor` structured data using the supplied company name, contact numbers, founder and service area
-- Crawler access rules in `robots.txt`
+Then open `http://localhost:8000`.
 
-### Sitemap and canonical URL
+## Checks
 
-A sitemap and canonical URL should be generated after the final public website domain is confirmed. Do not publish a guessed domain in canonical metadata or sitemap URLs. Add the verified production domain to both, then submit the sitemap in Google Search Console.
-
-## Content verification
-
-- Company founder: Beltrand Ndingwa.
-- Website contact numbers: +237 681 486 499 and +237 691 507 676.
-- Reported project categories include residential houses, luxury homes, apartments and retaining walls in Douala.
-- Portfolio photographs are illustrative placeholders, not verified photographs of Eagle Heritage projects.
-- Confirm project descriptions, client permissions, team credentials, registration claims, address and testimonials before publishing them as factual claims.
-- The enquiry form prepares a WhatsApp message and does not store or submit form data to a website server.
+Before release, verify all page routes, English/French content, mobile navigation, contact form WhatsApp handoff, form validation, cookie preference, images, contrast, and viewport widths of 360, 390, 768, 1024 and 1440px.
