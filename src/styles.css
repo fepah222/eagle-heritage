@@ -119,3 +119,8 @@ html[data-theme="dark"] .search-results a{border-color:#3b473d}
 html[data-theme="dark"] .search-results p{color:#b8c0b6}
 @media(max-width:1000px){.theme-toggle span{display:none}.theme-toggle{width:38px;justify-content:center;padding:6px}}
 @media(max-width:800px){.header-actions{gap:7px}.theme-toggle{min-height:40px;width:38px}.theme-toggle svg{width:17px;height:17px}}
+
+/* Ensure language controls remain clickable above header decorations */
+.header-actions{position:relative;z-index:55;pointer-events:auto}
+.language-switch{position:relative;z-index:56;pointer-events:auto}
+.language-switch button{position:relative;z-index:57;pointer-events:auto;touch-action:manipulation}
