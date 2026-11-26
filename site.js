@@ -4,7 +4,7 @@ const languageKey="eagleHeritageLanguage";let lang="en";
 try{lang=localStorage.getItem(languageKey)==="fr"?"fr":"en"}catch(e){}
 const text=(en,fr)=>lang==="fr"?fr:en;
 function setLanguage(next){lang=next==="fr"?"fr":"en";try{localStorage.setItem(languageKey,lang)}catch(e){}document.documentElement.lang=lang;
-document.querySelectorAll("[data-en][data-fr]").forEach(el=>{const value=el.getAttribute("data-"+lang);if(value!==null)el.innerHTML=value});
+document.querySelectorAll("[data-en][data-fr]").forEach(el=>{const value=el.getAttribute("data-"+lang);if(value!==null)el.innerHTML=value});document.querySelectorAll("[data-en-placeholder][data-fr-placeholder]").forEach(el=>{el.placeholder=el.getAttribute("data-"+lang+"-placeholder")||""});
 if(languageButton){languageButton.textContent=lang.toUpperCase();languageButton.setAttribute("aria-label",text("English active. Switch to French","Français actif. Passer en anglais"));languageButton.title=text("Switch language to French","Changer la langue en anglais")}
 if(menuButton){menuButton.setAttribute("aria-label",menuButton.getAttribute("aria-expanded")==="true"?text("Close navigation","Fermer la navigation"):text("Open navigation","Ouvrir la navigation"))}
 if(nav){nav.setAttribute("aria-label",text("Main navigation","Navigation principale"))}
