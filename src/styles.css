@@ -91,3 +91,31 @@
   .brand-mark{width:36px;height:36px}
   .language-switch{gap:4px}
 }
+
+/* Accessible, persistent light/dark theme */
+.theme-toggle{display:flex;align-items:center;gap:7px;border:1px solid #ffffff38;border-radius:999px;padding:7px 10px;background:#ffffff12;color:#fff;backdrop-filter:blur(12px);font:700 9px Manrope;letter-spacing:.8px;min-height:38px;white-space:nowrap}
+.theme-toggle svg{width:16px;height:16px}
+.theme-toggle:hover{background:#ffffff25}
+html[data-theme="dark"] body{background:#151b17;color:#e9e8df}
+html[data-theme="dark"] .header.scrolled{background:#111713}
+html[data-theme="dark"] .intro,html[data-theme="dark"] .services,html[data-theme="dark"] .policies{background:#151b17;color:#e9e8df}
+html[data-theme="dark"] .projects,html[data-theme="dark"] .founder,html[data-theme="dark"] .faq{background:#1d261f;color:#e9e8df}
+html[data-theme="dark"] .section-label{border-color:#39433b;color:#c1a982}
+html[data-theme="dark"] .intro-grid p:not(.large-copy),html[data-theme="dark"] .services-grid>div:first-child p,html[data-theme="dark"] .founder p{color:#b8c0b6}
+html[data-theme="dark"] .project-caption small{color:#b6bdb4}
+html[data-theme="dark"] .service-list a{background:#222d25;border-color:#3b473d;box-shadow:0 5px 18px #0002;color:#e9e8df}
+html[data-theme="dark"] .service-list a>svg:first-of-type{color:#c1a982}
+html[data-theme="dark"] .service-list a>svg:last-of-type{color:#c1a982}
+html[data-theme="dark"] .faq-list details{border-color:#3b473d}
+html[data-theme="dark"] .faq-list details p{color:#b8c0b6}
+html[data-theme="dark"] .policy-grid article{background:#222d25;border-color:#3b473d}
+html[data-theme="dark"] .policy-grid p{color:#b8c0b6}
+html[data-theme="dark"] .footer{background:#0f1511}
+html[data-theme="dark"] .mobile-bottom-nav{background:#0e1511;border-color:#c1a98240}
+html[data-theme="dark"] .search-box{background:#222d25;color:#e9e8df}
+html[data-theme="dark"] .search-box input{color:#e9e8df;border-color:#536052}
+html[data-theme="dark"] .search-close{color:#e9e8df}
+html[data-theme="dark"] .search-results a{border-color:#3b473d}
+html[data-theme="dark"] .search-results p{color:#b8c0b6}
+@media(max-width:1000px){.theme-toggle span{display:none}.theme-toggle{width:38px;justify-content:center;padding:6px}}
+@media(max-width:800px){.header-actions{gap:7px}.theme-toggle{min-height:40px;width:38px}.theme-toggle svg{width:17px;height:17px}}
