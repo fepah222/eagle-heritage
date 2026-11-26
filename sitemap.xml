@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://eagle-heritage.netlify.app/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://eagle-heritage.pages.dev/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://eagle-heritage.pages.dev/about.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://eagle-heritage.pages.dev/services.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://eagle-heritage.pages.dev/projects.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://eagle-heritage.pages.dev/approach.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://eagle-heritage.pages.dev/contact.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://eagle-heritage.pages.dev/privacy.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://eagle-heritage.pages.dev/cookies.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://eagle-heritage.pages.dev/terms.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
