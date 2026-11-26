@@ -253,3 +253,16 @@ body,.inner-page{background:#f0eee7!important;color:#333a34!important}
   white-space:normal!important;
  }
 }
+
+/* Minimal hamburger: three lines only, no enclosing button outline or fill */
+@media(max-width:850px){
+ .menu-toggle{
+  background:transparent!important;border:0!important;border-radius:0!important;
+  box-shadow:none!important;width:40px!important;min-width:40px!important;
+  height:40px!important;min-height:40px!important;padding:4px!important;
+  color:var(--bronze-light,#d0bd9e)!important;
+ }
+ .menu-toggle:focus-visible{outline:2px solid var(--bronze-light,#d0bd9e)!important;outline-offset:3px!important}
+ .hamburger-icon{width:25px!important;height:18px!important}
+ .hamburger-icon span{height:2px!important;border-radius:0!important}
+}
