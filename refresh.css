@@ -302,3 +302,42 @@ body,.inner-page{background:#e9e5dc!important;color:#27342d!important}
  .home-quicklinks a{background:#d8d0c1!important;color:#263b2e!important;border:1px solid #b8aa91!important}
  .home-quicklinks a span{color:#756044!important}
 }
+
+/* Contact section: compact CTA and enforce readable contrast */
+.contact-method{border-bottom:0!important;padding:15px 0 20px!important}
+.contact-label{color:#34483b!important}
+.contact-method a{color:#26372d!important}
+.contact-method p,.contact-method .contact-detail{color:#34483b!important}
+.contact-whatsapp{
+ display:inline-flex!important;
+ width:max-content!important;
+ max-width:100%!important;
+ flex:0 0 auto!important;
+ align-self:flex-start!important;
+ padding:11px 17px!important;
+ margin-top:16px!important;
+ border-radius:4px!important;
+ background:#b6a07d!important;
+ border:1px solid #9b8766!important;
+ color:#24362c!important;
+ font-size:10px!important;
+ font-weight:800!important;
+ text-align:center!important;
+ white-space:nowrap!important;
+}
+.contact-whatsapp span{margin-left:5px}
+.contact-panel{background:#ded8cc!important}
+.form-heading h3{color:#263f31!important}
+.form-heading p{color:#35463a!important}
+.enquiry-form label{color:#263f31!important}
+.enquiry-form input,.enquiry-form select,.enquiry-form textarea{
+ background:#d2cabc!important;color:#26342d!important;border-color:#a9a292!important
+}
+.enquiry-form input::placeholder,.enquiry-form textarea::placeholder{color:#4b574d!important}
+.form-privacy{color:#3e4b42!important}
+.contact-intro>p:not(.eyebrow){color:#e6e9e3!important}
+.contact h2{color:#f4f1e8!important}
+@media(max-width:600px){
+ .contact-whatsapp{width:max-content!important;max-width:100%!important;padding:11px 16px!important;font-size:10px!important}
+ .contact-method{padding-block:13px!important}
+}
