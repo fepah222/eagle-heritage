@@ -1,11 +1,9 @@
-# Image Upload Guide
+# Website image assets
 
-Upload files with these exact names so the website displays them automatically:
+Place verified, approved assets in this directory structure:
 
-- Founder portrait: `assets/images/founder.jpg`
-- Company logo: `assets/images/branding/logo.png`
-- Project 1: `assets/images/projects/project-01.jpg`
-- Project 2: `assets/images/projects/project-02.jpg`
-- Project 3: `assets/images/projects/project-03.jpg`
+- `branding/` — official logo files
+- `projects/` — company-approved project photography
+- `team/` — approved staff/founder portraits
 
-Keep the filename and extension exact. If you have PNG photos instead of JPG, tell me and I can adjust the website paths. Upload additional project images later using more project folders/files; the initial homepage is currently wired to the first three image slots.
+Do not use illustrative stock imagery as evidence of Eagle Heritage completed work. Obtain permission before publishing client, site or team images. Optimize images for the web before uploading.
