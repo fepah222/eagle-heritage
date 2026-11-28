@@ -200,3 +200,8 @@
  .footer-column h3{font-size:7px;letter-spacing:0}
  .footer-column a,.footer-column span{font-size:7px;line-height:1.2}
 }
+
+
+/* Final combined palette + footer layout QA */
+.footer-columns{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%;align-items:start;justify-items:center}
+@media(max-width:800px){.footer-columns{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
