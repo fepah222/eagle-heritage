@@ -55,3 +55,11 @@ Then open `http://localhost:8000`.
 ## Checks
 
 Before release, verify all page routes, English/French content, mobile navigation, contact form WhatsApp handoff, form validation, cookie preference, images, contrast, and viewport widths of 360, 390, 768, 1024 and 1440px.
+
+## Answer Engine Optimization (AEO)
+
+- `faq.html` provides concise, question-led answers in English and French for common service, location, quotation and contact questions.
+- The FAQ page includes matching `FAQPage` JSON-LD structured data. Structured data mirrors visible page content and avoids claiming unverified projects, prices, office addresses or service guarantees.
+- The FAQ page is linked from the homepage navigation/footer and included in `sitemap.xml`.
+- Keep the FAQ answers and structured data synchronized whenever company facts are confirmed or changed.
+- AEO is not a guaranteed placement in AI answers. Accuracy, crawlability, clear company identity, useful pages and credible external mentions all matter.
