@@ -167,3 +167,31 @@
   .footer-main p{font-size:8px}
   .footer-links a,.footer-links span{font-size:8px}
 }
+
+
+/* Mobile refinement: comfortable side margins and readable, slightly smaller copy */
+@media(max-width:600px){
+  .hero-inner{padding-inline:16px}
+  .hero-copy{padding-inline:2px}
+  .hero h1{font-size:clamp(30px,8.2vw,42px);line-height:1.08}
+  .hero-description{font-size:clamp(10px,2.8vw,12px);max-width:48ch}
+  .hero-actions{padding-inline:2px}
+  .intro-grid{padding-inline:12px}
+  .intro-heading,.intro-body{padding-inline:2px}
+  .section-label,.section-heading{padding-inline:12px}
+  .service-item{padding-inline:8px}
+  .service-content{padding-inline:5px}
+  .service-content h3{font-size:clamp(10px,2.9vw,12px)}
+  .service-content p,.service-content li{font-size:clamp(7.5px,2.15vw,9px);line-height:1.48}
+  .portfolio-grid{margin-inline:8px}
+  .portfolio-meta{padding-inline:8px}
+  .portfolio-disclaimer{margin-inline:8px}
+  .capabilities-grid,.leadership-grid,.contact-grid{padding-inline:12px}
+  .capabilities-intro,.leadership-copy p,.contact-grid p{font-size:clamp(9px,2.25vw,11px)}
+  .capability-points{padding-inline:2px}
+  .contact-panel{margin-inline:4px}
+  .contact-method,.contact-intro{padding-inline:2px}
+  .enquiry-form{margin-inline:12px}
+  .footer-main{padding-inline:12px}
+  .footer-bottom{padding-inline:12px}
+}
