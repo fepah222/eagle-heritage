@@ -188,3 +188,236 @@ textarea {
   .language-toggle { min-width: 40px; padding-inline: 7px; }
   .menu-toggle { width: 40px; }
 }
+
+/* =========================================================
+   MOBILE VISUAL FIXES — overlap, spacing, CTA sizing, footer
+   ========================================================= */
+:root { --gutter: clamp(20px, 5vw, 64px); }
+.container {
+  width: min(var(--max), calc(100% - 2 * var(--gutter)));
+  margin-inline: auto;
+}
+.hero-copy { max-width: 720px; }
+.hero h1 {
+  display: block;
+  max-width: 11ch;
+  line-height: 1.08;
+  text-shadow: 0 2px 16px rgba(0,0,0,.22);
+}
+.hero h1 em { display: inline; }
+.hero-description {
+  max-width: 52ch;
+  margin-top: 20px;
+  line-height: 1.65;
+  text-shadow: 0 1px 10px rgba(0,0,0,.24);
+}
+.hero-actions {
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.hero-actions .button {
+  flex: 0 1 auto;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+  padding-inline: 18px;
+  white-space: normal;
+}
+.button {
+  width: auto;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 10px 18px;
+  line-height: 1.35;
+}
+.intro-body .inline-link {
+  width: fit-content;
+  max-width: 100%;
+}
+.principles {
+  gap: 14px;
+}
+.principles article {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.principles h3 { line-height: 1.25; }
+.section-heading > .button,
+.section-heading > a.button {
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+.footer-main {
+  align-items: start;
+}
+.footer-links {
+  min-width: 0;
+}
+.footer-links a {
+  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.footer-links a:hover {
+  transform: translateX(3px);
+}
+@media (max-width: 850px) {
+  .hero-inner { width: min(var(--max), calc(100% - 2 * var(--gutter))); }
+  .hero-copy { max-width: 100%; }
+  .hero h1 { max-width: 10.5ch; }
+  .hero-actions { justify-content: flex-start; }
+  .hero-actions .button { flex: 0 1 auto; }
+}
+@media (max-width: 600px) {
+  :root { --gutter: 22px; --section: 54px; }
+  .container { width: calc(100% - 44px); }
+  .hero { min-height: 620px; min-height: max(620px, calc(82svh - 68px)); }
+  .hero-inner {
+    width: calc(100% - 44px);
+    padding-block: 50px 92px;
+  }
+  .hero-copy { width: 100%; }
+  .hero h1 {
+    font-size: clamp(38px, 10.5vw, 54px);
+    line-height: 1.08;
+    letter-spacing: -.7px;
+    max-width: 10.5ch;
+    overflow-wrap: normal;
+  }
+  .hero-description {
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 40ch;
+    margin-top: 18px;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .hero-actions .button {
+    flex: 0 1 auto;
+    width: auto;
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+  .hero-caption { left: 22px; right: 22px; }
+  .intro-grid { padding: 28px 0 32px; gap: 18px; }
+  .intro-heading h2,
+  .section-heading h2,
+  .capabilities h2,
+  .leadership h2,
+  .contact h2 { line-height: 1.14; }
+  .intro-body { padding-top: 0; }
+  .intro-body .inline-link {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0;
+    padding: 12px 16px;
+    border: 1px solid var(--gold);
+    background: var(--green);
+    color: var(--paper);
+    text-align: center;
+    border-radius: 3px;
+    min-height: 44px;
+  }
+  .intro-body .inline-link span { color: var(--gold-soft); }
+  .principles {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .principles article {
+    padding: 18px 20px;
+    border-left: 3px solid var(--gold);
+  }
+  .principles h3 { margin: 6px 0 8px; font-size: 19px; }
+  .principles p { line-height: 1.6; }
+  .section-heading {
+    align-items: center;
+    text-align: left;
+    gap: 16px;
+  }
+  .section-heading > .button,
+  .section-heading > a.button { margin-inline: auto; }
+  .service-item { grid-template-columns: 26px minmax(0,1fr); }
+  .service-content { min-width: 0; }
+  .service-content h3 { overflow-wrap: anywhere; }
+  .portfolio-meta { padding: 18px; }
+  .capability-points { grid-template-columns: 1fr; }
+  .contact-whatsapp,
+  .enquiry-form .button { width: fit-content; }
+  .footer-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding-block: 34px;
+  }
+  .footer-main > div:first-child { text-align: center; }
+  .brand-footer { justify-content: center; }
+  .footer-main > div:first-child p {
+    max-width: 32ch;
+    margin: 12px auto 0;
+  }
+  /* Explore links become small, separated, centered navigation pills */
+  .footer-links:nth-child(2) {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links:nth-child(2) a:not(.footer-top) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    width: auto;
+    max-width: 100%;
+    padding: 8px 13px;
+    margin: 0;
+    border: 1px solid rgba(216,183,121,.52);
+    border-radius: 999px;
+    background: rgba(247,245,240,.06);
+    color: #f7f5f0;
+    font-size: 12px;
+    animation: footerPillIn .45s ease both;
+  }
+  .footer-links:nth-child(2) a:nth-of-type(1) { animation-delay: .03s; }
+  .footer-links:nth-child(2) a:nth-of-type(2) { animation-delay: .08s; }
+  .footer-links:nth-child(2) a:nth-of-type(3) { animation-delay: .13s; }
+  .footer-links:nth-child(2) a:nth-of-type(4) { animation-delay: .18s; }
+  .footer-links:nth-child(2) a:nth-of-type(5) { animation-delay: .23s; }
+  .footer-links:nth-child(2) .footer-top {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 8px;
+    padding: 8px 13px;
+    border: 1px solid rgba(216,183,121,.35);
+    border-radius: 999px;
+  }
+  .footer-links:nth-child(3),
+  .footer-links:nth-child(4) {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links:nth-child(3) a,
+  .footer-links:nth-child(4) a { width: fit-content; }
+  .footer-bottom { padding-block: 18px; }
+}
+@media (max-width: 380px) {
+  :root { --gutter: 18px; }
+  .container, .hero-inner { width: calc(100% - 36px); }
+  .hero h1 { font-size: clamp(36px, 10vw, 42px); max-width: 10ch; }
+  .hero-actions .button { padding-inline: 12px; }
+}
+@keyframes footerPillIn {
+  from { opacity: .6; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-links:nth-child(2) a { animation: none !important; transition: none !important; }
+}
