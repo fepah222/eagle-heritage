@@ -132,64 +132,7 @@ html[data-theme="dark"] .search-results p{color:#b8c0b6}
 .language-switch button{min-width:30px;min-height:30px;touch-action:manipulation}
 
 
-/* ==========================================================
-   CONSISTENT MOBILE-FIRST EXPERIENCE ON ALL SCREEN SIZES
-   Keep the same page structure and navigation on laptop/tablet
-   and phone; larger screens display the mobile composition
-   centered rather than switching to a separate desktop layout.
-   ========================================================== */
-@media (min-width:801px){
-  .glass-tabs{display:none!important}
-  .header{padding:16px 20px!important;gap:10px}
-  .header-project{display:none!important}
-  .hero{min-height:94svh}
-  .hero-content{max-width:560px;padding:130px 22px 105px}
-  .hero h1{font-size:clamp(43px,6vw,70px);line-height:1.04;letter-spacing:-1.5px;margin:20px 0}
-  .hero-content p{font-size:14px;line-height:1.65;max-width:440px}
-  .hero-buttons{gap:9px}
-  .hero-buttons .btn{flex:1 1 45%;padding:13px 10px;font-size:9px}
-  .hero-shade{background:linear-gradient(90deg,#18231df0 0%,#18231dce 55%,#18231d65 100%),linear-gradient(0deg,#18231d9c,transparent 50%)}
-  .hero-footer{bottom:22px;left:22px;right:22px}
-  .section{padding:68px 20px;max-width:600px;margin-inline:auto}
-  .section h2{font-size:clamp(39px,5vw,62px)}
-  .intro-grid,.services-grid,.founder-grid{grid-template-columns:1fr;gap:28px}
-  .intro-grid{margin-top:40px}
-  .section-heading{align-items:start;flex-direction:column;margin-top:38px}
-  .project-grid{grid-template-columns:1fr;gap:22px}
-  .project-image{aspect-ratio:1.18}
-  .project-caption{padding:14px 0}
-  .services-grid{margin-top:40px}
-  .service-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .service-list a{min-height:145px;padding:16px 13px;border-radius:9px}
-  .service-list a strong{font-size:14px}
-  .approach{min-height:510px}
-  .founder-grid{margin-top:40px}
-  .founder-photo{max-width:100%;width:100%}
-  .founder-photo img{max-height:none}
-  .contact h2{font-size:clamp(43px,5vw,72px)}
-  .contact-methods{display:grid;grid-template-columns:1fr;gap:9px}
-  .contact-methods a{padding:13px}
-  .faq-list summary{font-size:15px}
-  .policy-grid{grid-template-columns:1fr;gap:12px}
-  .policies{padding-top:55px;padding-bottom:50px}
-  .footer{padding:35px 20px 20px}
-  .footer-main{align-items:flex-start;flex-direction:column;gap:18px;padding-bottom:28px}
-  .footer-links{gap:12px 16px;padding-bottom:22px}
-  .footer-links a{font-size:8px}
-  .footer-bottom{font-size:8px;letter-spacing:.6px;flex-direction:column;align-items:flex-start}
-  body{padding-bottom:72px}
-  .mobile-bottom-nav{display:grid!important;position:fixed;z-index:70;bottom:0;left:0;right:0;grid-template-columns:repeat(4,1fr);min-height:68px;padding:7px 5px calc(7px + env(safe-area-inset-bottom));background:#14251d;border-top:1px solid #c1a98245;box-shadow:0 -8px 25px #0002}
-  .mobile-bottom-nav a,.mobile-bottom-nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border:0;background:transparent;color:#e9e8df;font:600 9px Manrope;letter-spacing:.3px;padding:3px 1px;min-width:0}
-  .mobile-bottom-nav svg{width:20px;height:20px;stroke-width:1.8}
-  .mobile-bottom-nav .active{color:#c1a982}
-  .mobile-bottom-nav .active:after{content:"";width:25px;height:2px;border-radius:2px;background:#c1a982;margin-top:1px}
-  .search-box{padding:20px}
-  .menu-overlay{padding:100px 25px 25px}
-  .menu-links{margin:25px auto}
-  .menu-links a{font-size:clamp(30px,6vw,50px);gap:15px}
-  .menu-meta,.menu-bottom{gap:12px;font-size:8px}
-  .menu-bottom span:last-child{text-align:right}
-}
+
 @media (min-width:801px){
   .header-actions{gap:7px}
   .theme-toggle{min-height:40px;width:38px}
