@@ -17,3 +17,174 @@
 @media(max-width:850px){.topbar{display:none}.header-inner{min-height:68px}.menu-toggle{display:flex;order:3;align-items:center;justify-content:center}.header-tools{order:2}.nav{display:none;position:absolute;top:calc(100% + 8px);right:10px;left:auto;width:min(220px,calc(100vw - 24px));max-height:min(72svh,520px);overflow:auto;padding:8px;background:var(--paper);border:1px solid #c8b38e;box-shadow:0 12px 30px rgba(12,25,17,.3);flex-direction:column;align-items:stretch;gap:5px}.nav.is-open{display:flex}.nav>a{min-height:44px;display:flex;align-items:center;padding:10px 12px;background:#e7e1d6;border:1px solid #c9c1b4;color:#243d32;font-size:12px;white-space:normal}.nav>a:hover,.nav>a[aria-current=page]{background:var(--gold);color:#1f2421}.header-inner{justify-content:space-between}.hero{min-height:calc(76svh - 68px)}.intro-grid,.capabilities-grid,.leadership-grid,.contact-grid{grid-template-columns:1fr;gap:28px}.section-heading{align-items:start;flex-direction:column;gap:16px}.process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.portfolio-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){:root{--gutter:18px;--section:54px}body{font-size:16px}.brand{gap:7px}.brand-copy strong{font-size:11px;letter-spacing:.8px}.brand-copy small{font-size:8px;letter-spacing:.7px}.brand-logo,.brand-symbol{width:34px;height:34px}.brand-symbol svg{width:26px}.language-toggle{min-width:42px;min-height:44px;font-size:12px}.hero{min-height:600px;min-height:calc(82svh - 68px)}.hero-overlay{background:linear-gradient(90deg,rgba(24,43,34,.86),rgba(24,43,34,.58))}.hero-inner{padding-block:52px 88px}.hero h1{font-size:clamp(42px,11vw,58px);letter-spacing:-1px}.hero-description{font-size:16px;max-width:43ch}.hero-actions{gap:8px}.hero-actions .button{flex:1 1 145px;padding:10px 12px;font-size:12px}.hero-caption{bottom:20px;font-size:10px}.home-quicklinks a:last-child{grid-column:1/-1;justify-self:center;width:min(100%,240px)}.intro-grid{padding:36px 0;gap:20px}.intro-heading h2,.section-heading h2,.capabilities h2,.leadership h2,.contact h2{font-size:clamp(32px,9vw,44px)}.intro-body,.intro-body p,.principles p{font-size:16px}.principles{grid-template-columns:1fr;gap:10px}.process-grid{grid-template-columns:1fr 1fr}.principles article{padding:18px}.section-heading{padding:28px 0}.section-heading>p{font-size:16px}.service-item{grid-template-columns:28px 1fr;gap:12px;padding:20px 0}.service-visual{grid-column:2;min-height:180px}.service-visual img{min-height:180px}.service-content{grid-column:2}.service-content h3{font-size:22px}.service-content p,.service-content li{font-size:16px}.portfolio-grid{grid-template-columns:1fr}.portfolio-meta{padding:17px}.portfolio-meta h3{font-size:20px}.portfolio-meta p{font-size:15px}.capabilities-image{min-height:280px}.capabilities-image img{min-height:280px}.capability-points{grid-template-columns:1fr}.page-title{padding-block:32px 22px}.page-title h1{font-size:clamp(34px,10vw,44px)}.page-title>p:last-child{font-size:16px}.page-back{font-size:12px}.contact-panel{padding:18px}.form-grid{grid-template-columns:1fr;gap:12px}.form-grid .form-full{grid-column:auto}.enquiry-form label{font-size:13px}.enquiry-form input,.enquiry-form select,.enquiry-form textarea{font-size:16px}.contact-whatsapp{padding:11px 15px;font-size:12px}.enquiry-form{padding:18px;margin-top:28px}.footer-main{grid-template-columns:1fr;gap:18px;padding-block:30px}.footer-bottom{flex-direction:column;text-align:center;gap:6px}.cookie-banner{left:10px;right:10px;bottom:10px;flex-direction:column;align-items:stretch;gap:12px;padding:14px}.cookie-actions{justify-content:flex-end}.cookie-actions button{flex:1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal,.reveal-ready .reveal{opacity:1!important;transform:none!important}}
+
+/* =========================================================
+   RESPONSIVE UI SAFETY LAYER
+   Shared by every page. Additive overrides only; preserves
+   existing content, branding, and component structure.
+   ========================================================= */
+:root {
+  --gutter: clamp(20px, 4.5vw, 64px);
+  --content-max: 1200px;
+}
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+body {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.container {
+  width: min(var(--max), calc(100% - (2 * var(--gutter))));
+  margin-inline: auto;
+}
+main, section, header, footer, nav, article, aside {
+  min-width: 0;
+}
+h1, h2, h3, h4, p, li, a, button, label, small, strong {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+h1, h2, h3 {
+  text-wrap: balance;
+}
+p, li {
+  text-wrap: pretty;
+}
+img, video, iframe, svg {
+  max-width: 100%;
+}
+input, select, textarea, button {
+  max-width: 100%;
+}
+textarea {
+  overflow-wrap: break-word;
+}
+.hero-copy, .intro-heading, .intro-body, .section-heading,
+.service-content, .portfolio-meta, .capabilities-copy,
+.leadership-copy, .contact-intro, .contact-panel,
+.policy-content, .footer-main > * {
+  min-width: 0;
+}
+.nav {
+  max-width: calc(100vw - 2 * 12px);
+}
+.nav > a {
+  overflow-wrap: anywhere;
+}
+.hero h1 {
+  max-width: 13ch;
+}
+.hero-description,
+.page-title > p:last-child,
+.section-heading > p,
+.intro-body,
+.service-content p,
+.portfolio-meta p,
+.capabilities-intro,
+.leadership-copy p,
+.contact-intro > p,
+.policy-content {
+  max-width: 65ch;
+}
+.button, .contact-whatsapp, .cookie-actions button {
+  white-space: normal;
+  text-align: center;
+}
+.form-grid > * {
+  min-width: 0;
+}
+.footer-links, .footer-main > div {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 850px) {
+  :root { --gutter: clamp(20px, 5vw, 30px); }
+  .header-inner { flex-wrap: nowrap; }
+  .brand { min-width: 0; }
+  .nav.is-open {
+    right: var(--gutter);
+    left: var(--gutter);
+    width: auto;
+    max-width: none;
+  }
+  .hero-inner {
+    width: 100%;
+  }
+  .hero h1 {
+    max-width: 12ch;
+  }
+  .hero-actions .button {
+    min-width: 0;
+  }
+}
+@media (max-width: 600px) {
+  :root { --gutter: 22px; --section: 52px; }
+  .container {
+    width: calc(100% - 44px);
+  }
+  .page-title,
+  .page-back,
+  .section-pad > .container,
+  .section-pad .container {
+    padding-inline: 0;
+  }
+  .hero-inner {
+    padding-inline: 0;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 10vw, 54px);
+    line-height: 1.08;
+    letter-spacing: -.6px;
+    max-width: 11ch;
+  }
+  .hero-description {
+    max-width: 42ch;
+    line-height: 1.6;
+  }
+  .hero-actions {
+    align-items: stretch;
+  }
+  .hero-actions .button {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+  .intro-grid, .section-heading, .contact-grid,
+  .capabilities-grid, .leadership-grid {
+    min-width: 0;
+  }
+  .service-item {
+    grid-template-columns: 26px minmax(0, 1fr);
+  }
+  .service-content ul {
+    padding-left: 18px;
+  }
+  .portfolio-card, .principles article,
+  .capability-points div, .contact-panel {
+    min-width: 0;
+  }
+  .form-grid label {
+    min-width: 0;
+  }
+  .enquiry-form input, .enquiry-form select,
+  .enquiry-form textarea {
+    width: 100%;
+    min-width: 0;
+  }
+  .enquiry-form .button {
+    width: 100%;
+  }
+  .cookie-banner {
+    max-height: calc(100svh - 20px);
+    overflow: auto;
+  }
+}
+@media (max-width: 360px) {
+  :root { --gutter: 18px; }
+  .container { width: calc(100% - 36px); }
+  .brand-copy small { letter-spacing: .3px; }
+  .hero h1 { font-size: clamp(34px, 9.6vw, 42px); }
+  .language-toggle { min-width: 40px; padding-inline: 7px; }
+  .menu-toggle { width: 40px; }
+}
