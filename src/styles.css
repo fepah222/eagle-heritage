@@ -205,3 +205,23 @@
 /* Final combined palette + footer layout QA */
 .footer-columns{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;width:100%;align-items:start;justify-items:center}
 @media(max-width:800px){.footer-columns{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+
+
+/* FINAL QA: remove warm yellow/gold and align every background/accent with Slate Blue & Silver */
+:root{--eh-slate:#263746;--eh-slate-deep:#1D2B36;--eh-cool-white:#F4F6F8;--eh-silver:#A9B9C7;--eh-silver-light:#C4D0DA;--eh-border:#D8E0E6}
+body,.projects,.founder,.faq,.policies{background:var(--eh-cool-white)!important}
+.hero,.approach,.contact,.menu-overlay,.menu-dropdown,.not-found{background-color:var(--eh-slate)!important}
+.footer{background:var(--eh-slate-deep)!important}
+.kicker,.section-label,.text-link,.service-list a>svg:first-of-type,.footer-column h3,.footer-links a:hover,.menu-links a:hover,.menu-links small,.language-switch a.active,.not-found-mark,.not-found p{color:var(--eh-silver)!important}
+.kicker span,.project-caption>span,.service-list span,.footer-column h3{background-color:var(--eh-silver)!important}
+.hero h1 em,.section h2 em,.contact h2 em,.menu-meta,.menu-bottom,.footer-column h3{color:var(--eh-silver)!important}
+.primary{background:var(--eh-silver)!important;color:var(--eh-slate-deep)!important}
+.primary:hover{background:var(--eh-silver-light)!important}
+.service-list a>svg:first-of-type{color:var(--eh-slate)!important}
+.portrait-unavailable{background:linear-gradient(135deg,var(--eh-slate),var(--eh-slate-deep))!important}
+/* Footer layout: three side-by-side columns, never stacked */
+.footer-columns{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:start!important;justify-items:center!important;width:100%!important;gap:clamp(4px,1.5vw,18px)!important}
+.footer-column{width:100%;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.footer-column h3{font-size:clamp(8px,1.3vw,10px)!important;letter-spacing:.6px!important}
+.footer-column a,.footer-column span{font-size:clamp(8px,2.2vw,11px)!important;line-height:1.35!important;overflow-wrap:anywhere!important;word-break:break-word!important}
+@media(max-width:800px){.footer-columns{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:3px!important}.footer-column h3{font-size:clamp(7px,2.2vw,9px)!important}.footer-column a,.footer-column span{font-size:clamp(7px,2.1vw,9px)!important}}
