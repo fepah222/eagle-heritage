@@ -452,3 +452,352 @@ textarea {
   .hero { min-height: 700px; min-height: max(700px, calc(92svh - 68px)); }
   .hero-inner { padding-bottom: 128px; }
 }
+
+/* =========================================================
+   MOBILE QA PASS — consistent spacing, alignment and clear CTAs
+   Shared stylesheet: applies to every site page.
+   ========================================================= */
+@media (max-width: 600px) {
+  :root { --gutter: 22px; --section: 58px; }
+  html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+  .container {
+    width: calc(100% - 44px) !important;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+  main > section,
+  .section-pad { padding-block: 58px; }
+  main > section > .container,
+  .section-pad > .container {
+    padding-inline: 0;
+  }
+  h1, h2, h3, p, li, a, span, strong {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+  h1, h2 { text-wrap: balance; }
+  p, li { line-height: 1.65; text-wrap: pretty; }
+
+  /* Headings and supporting text should have breathing room. */
+  .section-heading,
+  .projects-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 14px;
+    text-align: center;
+  }
+  .section-heading h2,
+  .projects-heading h2,
+  .intro-heading h2,
+  .capabilities h2,
+  .leadership h2,
+  .contact h2 {
+    width: 100%;
+    max-width: 14ch;
+    margin-inline: auto;
+    font-size: clamp(32px, 9vw, 43px);
+    line-height: 1.16;
+    letter-spacing: -.65px;
+    overflow-wrap: normal;
+  }
+  .section-heading > p,
+  .projects-heading > p,
+  .capabilities-intro,
+  .contact-grid > div > p,
+  .leadership-copy p {
+    width: 100%;
+    max-width: 42ch;
+    margin-inline: auto;
+    text-align: center;
+  }
+  .section-label {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    width: 100%;
+    gap: 22px;
+    padding: 30px 0;
+  }
+  .intro-heading { text-align: center; }
+  .intro-heading h2 { max-width: 13ch; }
+  .intro-body {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+  .intro-body p { max-width: 42ch; margin-inline: auto; }
+  .intro-body .lead { font-size: 17px; }
+
+  /* Navigation actions and inline links are unmistakable tap targets. */
+  .button,
+  .hero-actions .button,
+  .section-heading .button,
+  .contact-grid .button,
+  .intro-body .inline-link,
+  .capabilities .inline-link,
+  .leadership .inline-link,
+  .service-content .inline-link,
+  .page-back .back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    padding: 11px 16px;
+    margin-inline: auto;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    text-align: center;
+    line-height: 1.35;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    box-shadow: 0 2px 8px rgba(24,43,34,.08);
+  }
+  .inline-link {
+    background: var(--green);
+    color: var(--paper);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 11px;
+  }
+  .inline-link span { color: var(--gold-soft); }
+  .hero-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-actions .button {
+    flex: 0 1 auto;
+    width: fit-content;
+    font-size: 11px;
+    padding-inline: 14px;
+  }
+  .section-heading > .button,
+  .section-heading > a.button {
+    align-self: center;
+    margin: 8px auto 0;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 24px;
+    text-align: center;
+  }
+  .contact-grid > div { min-width: 0; }
+  .contact-grid .button { margin-inline: auto; }
+  .contact-grid > div:last-child p { overflow-wrap: anywhere; }
+
+  /* The capabilities area is a clean, centered mobile stack. */
+  .capabilities-grid,
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 26px;
+    text-align: center;
+  }
+  .capabilities-image {
+    min-height: 240px;
+    height: 240px;
+    width: 100%;
+  }
+  .capabilities-image img {
+    min-height: 240px;
+    height: 240px;
+    object-fit: cover;
+  }
+  .capability-points {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 10px;
+    width: 100%;
+    margin: 22px auto;
+  }
+  .capability-points div {
+    width: 100%;
+    padding: 14px 16px;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 1.4;
+  }
+  .capabilities .inline-link,
+  .leadership .inline-link { margin: 8px auto 0; }
+
+  /* Project section headings, cards and explanatory copy. */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 14px;
+    width: 100%;
+  }
+  .portfolio-card { min-width: 0; width: 100%; }
+  .portfolio-meta {
+    padding: 20px;
+    text-align: center;
+  }
+  .portfolio-meta h3 {
+    font-size: 21px;
+    line-height: 1.25;
+    max-width: 22ch;
+    margin: 8px auto;
+  }
+  .portfolio-meta p {
+    max-width: 40ch;
+    margin-inline: auto;
+  }
+  .portfolio-disclaimer {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px;
+    min-width: 0;
+  }
+  .portfolio-disclaimer p { min-width: 0; }
+
+  /* Service rows and lists cannot overflow the viewport. */
+  .service-list { width: 100%; }
+  .service-item {
+    display: grid;
+    grid-template-columns: 24px minmax(0,1fr);
+    gap: 12px;
+    width: 100%;
+  }
+  .service-visual { min-width: 0; }
+  .service-content { min-width: 0; width: 100%; }
+  .service-content h3 { font-size: 22px; line-height: 1.25; }
+  .service-content p { max-width: 100%; }
+  .service-content ul { gap: 8px 12px; }
+
+  /* Principles and process cards are separated and not edge-to-edge. */
+  .principles,
+  .process-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 12px;
+    width: 100%;
+  }
+  .principles article {
+    width: 100%;
+    padding: 18px 20px;
+    border-left: 3px solid var(--gold);
+    text-align: left;
+  }
+  .principles article h3 { line-height: 1.25; }
+  .principles article p { max-width: 100%; }
+
+  /* Footer quick navigation becomes centered, separated pill buttons. */
+  .footer-main {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 26px;
+    padding-block: 36px;
+    text-align: center;
+  }
+  .footer-main > div { min-width: 0; }
+  .brand-footer { justify-content: center; }
+  .footer-main > div:first-child p {
+    max-width: 34ch;
+    margin: 12px auto 0;
+  }
+  .footer-links:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    text-align: center;
+  }
+  .footer-links:nth-child(2) > strong {
+    flex: 0 0 100%;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 4px;
+  }
+  .footer-links:nth-child(2) a:not(.footer-top) {
+    display: inline-flex;
+    width: auto;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 13px;
+    border: 1px solid rgba(216,183,121,.58);
+    border-radius: 999px;
+    background: rgba(247,245,240,.06);
+    color: #f7f5f0;
+    text-align: center;
+    font-size: 12px;
+    animation: footerPillIn .4s ease both;
+  }
+  .footer-links:nth-child(2) .footer-top {
+    display: inline-flex;
+    min-height: 38px;
+    width: auto;
+    justify-content: center;
+    padding: 8px 13px;
+    margin: 2px 0 0;
+    border: 1px solid rgba(216,183,121,.42);
+    border-radius: 999px;
+  }
+  .footer-links:nth-child(3),
+  .footer-links:nth-child(4) {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links:nth-child(3) a,
+  .footer-links:nth-child(4) a { width: fit-content; max-width: 100%; }
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding-block: 18px;
+  }
+  .cookie-banner {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    max-height: calc(100svh - 24px);
+    overflow: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .cookie-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .cookie-actions button {
+    flex: 0 1 auto;
+    width: fit-content;
+    min-width: 100px;
+  }
+}
+@media (max-width: 390px) {
+  .container { width: calc(100% - 36px) !important; }
+  .section-heading h2,
+  .projects-heading h2,
+  .intro-heading h2,
+  .capabilities h2,
+  .leadership h2,
+  .contact h2 { font-size: clamp(30px, 8.8vw, 38px); }
+  .hero-actions .button { padding-inline: 12px; }
+}
